@@ -240,7 +240,7 @@ function validate_install_prefix() {
       ;;
   esac
   local profile="$HOME/.profile"
-  test -z "$ZSH_VERSION" && profile="$HOME/.zshenv"
+  test "$ZSH_VERSION" && profile="$HOME/.zshenv"
   ADDITIONAL_WARNINGS="[WARN] the folder $prefix/bin is not on PATH, consider adding 'export PATH=$prefix/bin:\$PATH' to your $profile"
 
   # avoid problems when calling any verify_* function
